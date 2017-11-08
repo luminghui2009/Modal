@@ -10,17 +10,18 @@ function Modal() {
             {
                 txt:"我知道了",
                 cb:()=>$('.modal').fadeOut(200),
-                sty:{backgroundColor:'#fcc129', width:100,height:30,borderRadius:"30px",color:'#fff',lineHeight:"30px",fontSize:"16px"}
-            },
-            {
-                txt:"一键注册",
-                cb:()=>$('.modal').fadeOut(200),
-                sty:{backgroundColor:'#706eff', width:100,height:30,borderRadius:"30px",color:'#fff',lineHeight:"30px",fontSize:"16px"}
-            }
-        ]
-    };
+            sty:{backgroundColor:'#fcc129', width:100,height:30,borderRadius:"30px",color:'#fff',lineHeight:"30px",fontSize:"16px"}
+},
+    {
+        txt:"一键注册",
+            cb:()=>$('.modal').fadeOut(200),
+        sty:{backgroundColor:'#706eff', width:100,height:30,borderRadius:"30px",color:'#fff',lineHeight:"30px",fontSize:"16px"}
+    }
+]
+};
 };
 Modal.prototype.init=function (options=this.defaultOpt) {
+    $('.modal').detach();
     $(document.body).prepend('<div class="modal" style="display:none"></div>');
     $('.modal').append('<div class="modal-dialog"></div>');
     $('.modal-dialog').append('<div class="modal-header"><h2 class="modal-title"></h2></div>')
